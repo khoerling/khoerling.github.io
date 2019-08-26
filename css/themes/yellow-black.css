@@ -1,5 +1,14 @@
 /* Theme */
 
+::selection {
+  background: #333;
+  color: #FFEB3B;
+}
+::-moz-selection {
+  background: #333;
+  color: #FFEB3B;
+}
+
 html {
   background: #FFEB3B;
   background-image: linear-gradient(to bottom, #FFFE4E, #FFEB3B);
