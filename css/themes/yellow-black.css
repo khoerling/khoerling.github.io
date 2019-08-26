@@ -2,19 +2,19 @@
 
 ::selection {
   background: #333;
-  color: #FFEB3B;
+  color: #FFFC00;
 }
 ::-moz-selection {
   background: #333;
-  color: #FFEB3B;
+  color: #FFFC00;
 }
 
 html {
-  background: #FFEB3B;
-  background-image: linear-gradient(to bottom, #FFFE4E, #FFEB3B);
-	background: linear-gradient(-45deg, #FFFE4E, #FFF, #FFFE4E, #FFFE4E);
+  background: #FFFC00;
+	background: linear-gradient(-45deg, #FFF, #FFF, #FFFC00, #FFFC00);
 	background-size: 400% 400%;
-	animation: gradientBG 60s ease-out infinite;
+	animation: gradientBG 8s ease-in infinite;
+  animation-delay: 7s;
 	color: #1E1E1E;
 }
 
@@ -22,10 +22,13 @@ html {
 	0% {
 		background-position: 0% 50%;
 	}
-	50% {
+	7% {
 		background-position: 100% 50%;
 	}
-	100% {
+	40% {
+		background-position: 100% 50%;
+	}
+	60% {
 		background-position: 0% 50%;
 	}
 }
@@ -103,11 +106,11 @@ h2.tagline {
   animation: buildInSocial .4s ease-in;
 }
 .icons-social > a {
-  transition: transform .2s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  transition: transform .3s cubic-bezier(0.680, -0.550, 0.265, 1.550);
   display: inline-block;
 }
 .icons-social > a:hover {
-  transform: scale(1.123);
+  transform: scale(1.25);
   transition: none;
 }
 .qrcode {
@@ -118,7 +121,7 @@ h2.tagline {
 }
 .qrcode:hover {
   opacity: 1;
-  transform: scale(1.123);
+  transform: scale(1.15);
   transition: none;
 }
 
