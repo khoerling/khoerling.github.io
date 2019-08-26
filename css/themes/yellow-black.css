@@ -13,12 +13,27 @@ html {
   background: #FFFC00;
 	background: linear-gradient(-45deg, #FFF, #FFF, #FFFC00, #FFFC00);
 	background-size: 400% 400%;
-	animation: gradientBG 8s ease-in infinite;
+	animation: gradientBg 8s ease-in infinite;
   animation-delay: 7s;
 	color: #1E1E1E;
 }
 
-@keyframes gradientBG {
+.background {
+  pointer-events: none;
+  animation: buildInBg 1s ease-in;
+  animation-fill-mode: forwards;
+  background: url("../../images/bg.png") no-repeat 50% 100%;
+  background-size: cover;
+  position: absolute;
+  width: 125%;
+  left: -25%!important;
+  top: -25%!important;
+  bottom: -25%!important;
+  opacity: .15;
+  z-index: -1;
+}
+
+@keyframes gradientBg {
 	0% {
 		background-position: 0% 50%;
 	}
@@ -57,6 +72,14 @@ small {
 	fill: #1E1E1E;
 }
 
+@keyframes buildInBg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .15;
+  }
+}
 @keyframes buildInTagline {
   0% {
     opacity: .1;
