@@ -1,7 +1,7 @@
 /* Theme */
 
-body {
-	background: #FFEB3B;
+html {
+  background: #FFEB3B;
   background-image: linear-gradient(to bottom, #FFFE4E, #FFEB3B);
 	background: linear-gradient(-45deg, #FFFE4E, #FFF, #FFFE4E, #FFFE4E);
 	background-size: 400% 400%;
