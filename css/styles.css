@@ -34,7 +34,7 @@ html {
 
 /* Custom Styles */
 
-main {
+body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -43,7 +43,7 @@ main {
 	text-align: center;
 }
 
-main > .intro {
+.intro {
 	font-family: 'Reem Kufi', sans-serif;
 	font-size: 3.75em;
 	font-weight: 600;

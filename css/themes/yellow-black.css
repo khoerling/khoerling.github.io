@@ -1,9 +1,24 @@
 /* Theme */
 
-main {
+body {
 	background: #FFEB3B;
   background-image: linear-gradient(to bottom, #FFFE4E, #FFEB3B);
+	background: linear-gradient(-45deg, #FFFE4E, #FFF, #FFFE4E, #FFFE4E);
+	background-size: 400% 400%;
+	animation: gradientBG 60s ease-out infinite;
 	color: #1E1E1E;
+}
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 h2.tagline {
@@ -36,7 +51,7 @@ small {
     transform: scale(1);
   }
   25% {
-    transform: scale(1.15) translateY(3px);
+    transform: scale(1.1) translateY(2px);
   }
   100% {
     opacity: 1;
@@ -65,24 +80,15 @@ small {
     transform: scale(1.3) translateY(10px);
   }
   100% {
-    opacity: 1;
+    opacity: .75;
     transform: scale(1) translateY(0);
-  }
-}
-@keyframes buildIn {
-  0% {
-    opacity: .3;
-  }
-  100% {
-    opacity: 1;
   }
 }
 body {
   overflow: hidden;
-  animation: buildIn 0.3s ease-in;
 }
 h2.tagline {
-  animation: buildInTagline .3s ease-in;
+  animation: buildInTagline .2s ease-in;
 }
 .icons-social {
   animation: buildInSocial .4s ease-in;
@@ -96,6 +102,8 @@ h2.tagline {
   transition: none;
 }
 .qrcode {
+  opacity: .75;
+  margin-top: 60px;
   transition: opacity .3s ease-in, transform .2s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s;
   animation: buildInQr .5s ease-in;
 }
