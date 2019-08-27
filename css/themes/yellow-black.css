@@ -10,6 +10,7 @@
 }
 
 html {
+  background-color: #FFFC00;
   background: #FFFC00;
 	background: linear-gradient(-45deg, #FFF, #FFF, #FFFC00, #FFFC00);
 	background-size: 400% 400%;
