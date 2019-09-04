@@ -22,9 +22,9 @@ html {
 .lense {
   position: fixed!important;
   z-index: -1;
-  left: -8%!important;
-  right: -8%!important;
-  top: -2%!important;
+  left: -17%!important;
+  right: -17%!important;
+  top: -10%!important;
   bottom: -25%!important;
   animation: scaleDown 1s ease-out;
   background: radial-gradient(circle closest-corner at 50% 35%, rgba(0,0,0,0) 70%, rgba(0,0,0,.2) 100%)
