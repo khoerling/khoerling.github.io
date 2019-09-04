@@ -22,11 +22,8 @@ html {
 .lense {
   position: fixed!important;
   z-index: -1;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  left: -5%!important;
-  right: -5%!important;
+  left: -8%!important;
+  right: -8%!important;
   top: -2%!important;
   bottom: -25%!important;
   animation: scaleDown 1s ease-out;
