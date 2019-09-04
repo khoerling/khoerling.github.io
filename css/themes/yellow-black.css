@@ -19,6 +19,20 @@ html {
 	color: #1E1E1E;
 }
 
+.lense {
+  position: fixed!important;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  left: -5%!important;
+  right: -5%!important;
+  top: -2%!important;
+  bottom: -25%!important;
+  animation: scaleDown 1s ease-out;
+  background: radial-gradient(circle closest-corner at 50% 35%, rgba(0,0,0,0) 70%, rgba(0,0,0,.2) 100%)
+}
+
 .footer {
   position: fixed;
   bottom: 20px;
@@ -142,15 +156,38 @@ small {
     transform: scale(1) translateY(0);
   }
 }
+@keyframes scaleDown {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotateIn {
+  0% {
+    transform: rotate(-100deg) scale(5.8);
+  }
+  80% {
+    transform: scale(.8);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
 body {
   overflow: hidden;
 }
 h2.tagline {
   font-size: 1.6em;
-  animation: buildInTagline .2s ease-in;
+  animation: buildInTagline .6s cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 .icons-social {
-  animation: buildInSocial .4s ease-in;
+  animation: buildInSocial .7s cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 .icons-social > a {
   transition: transform .3s cubic-bezier(0.680, -0.550, 0.265, 1.550);
@@ -164,7 +201,7 @@ h2.tagline {
   opacity: .75;
   margin-top: 60px;
   transition: opacity .3s ease-in, transform .2s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s;
-  animation: buildInQr .5s ease-in;
+  animation: rotateIn .5s ease-in;
 }
 .qrcode:hover {
   opacity: 1;
