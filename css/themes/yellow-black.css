@@ -27,7 +27,7 @@ html {
   top: -10%!important;
   bottom: -25%!important;
   animation: scaleDown 1s ease-out;
-  background: radial-gradient(circle closest-corner at 50% 35%, rgba(0,0,0,0) 70%, rgba(0,0,0,.2) 100%)
+  background: radial-gradient(circle closest-corner at 50% 35%, rgba(0,0,0,0) 70%, rgba(0,0,0,.4) 100%)
 }
 
 .footer {
