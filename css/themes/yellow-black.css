@@ -82,6 +82,10 @@ a.footer {
 	}
 }
 
+h1 > a {
+  color: #1E1E1E;
+  text-decoration: none;
+}
 h2.tagline {
   margin-top: .5rem;
 }
