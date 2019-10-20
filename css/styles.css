@@ -12,8 +12,8 @@ html {
 
 @media screen and (max-width: 768px) {
   .lense {
-    opacity: .7!important;
-    bottom: -40%!important;
+    opacity: .6!important;
+    bottom: -50%!important;
   }
 }
 
