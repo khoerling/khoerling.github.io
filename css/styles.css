@@ -10,9 +10,10 @@ html {
 	}
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .lense {
-    opacity: .5!important;
+    opacity: .7!important;
+    bottom: -40%!important;
   }
 }
 
