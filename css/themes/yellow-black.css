@@ -38,6 +38,12 @@ html {
   opacity: .4;
   transition: opacity .3s ease-in, transform .2s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s;
 }
+.footer img {
+  position: absolute;
+  right: -60px;
+  bottom: -20px;
+  transform: scale(.8) rotate(-45deg)
+}
 .footer:hover {
   transform: scale(1.05);
   opacity: 1;
@@ -199,9 +205,9 @@ h2.tagline {
   transition: none;
 }
 .qrcode {
-  opacity: .75;
+  opacity: 1;
   margin-top: 60px;
-  transition: opacity .3s ease-in, transform .2s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s;
+  transition: transform .2s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s;
   animation: rotateIn .5s ease-in;
 }
 .qrcode:hover {

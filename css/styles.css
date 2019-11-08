@@ -15,6 +15,11 @@ html {
     opacity: .6!important;
     bottom: -50%!important;
   }
+  .footer img {
+    transform: rotate(-45deg) scale(.5)!important;
+    right: -60px!important;
+    bottom: -30px!important;
+  }
 }
 
 @media (min-width: 768px) {
