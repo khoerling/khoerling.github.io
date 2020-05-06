@@ -60,7 +60,7 @@ a.footer {
 }
 .background {
   pointer-events: none;
-  animation: buildInBg 2s ease-in .25s;
+  animation: buildInBg 2s ease-in .35s;
   animation-fill-mode: forwards;
   background: url("../../images/bg.png") no-repeat 50% 100%;
   background-size: cover;
@@ -102,6 +102,7 @@ h2 > a {
 
 small {
   font-size: .65em;
+  opacity: .5;
 }
 
 .icons-social {
@@ -173,12 +174,12 @@ small {
 }
 @keyframes rotateIn {
   0% {
-    transform: rotate(-100deg) scale(5.8);
+    transform: rotate(-300deg) scale(5.8);
   }
   80% {
-    transform: scale(.8);
+    transform: scale(.9);
   }
-  90% {
+  95% {
     transform: scale(1.1);
   }
   100% {
@@ -191,10 +192,10 @@ body {
 }
 h2.tagline {
   font-size: 1.6em;
-  animation: buildInTagline .6s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  animation: buildInTagline .65s cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 .icons-social {
-  animation: buildInSocial .7s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  animation: buildInSocial .75s cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 .icons-social > a {
   transition: transform .3s cubic-bezier(0.680, -0.550, 0.265, 1.550);
@@ -205,15 +206,14 @@ h2.tagline {
   transition: none;
 }
 .qrcode {
-  opacity: 1;
   margin-top: 60px;
-  transition: transform .2s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s;
-  animation: rotateIn .5s ease-in;
+  transition: transform .3s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s;
+  will-change: transform;
+  animation: rotateIn .6s ease-in;
 }
 .qrcode:hover {
-  opacity: 1;
   transform: scale(1.15);
-  transition: none;
+  transition: .05s ease-in .25s;
 }
 
 .center {
