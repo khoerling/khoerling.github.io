@@ -15,7 +15,7 @@ html {
     opacity: .6!important;
     bottom: -50%!important;
   }
-  .footer img {
+  .footer .keith {
     transform: rotate(-45deg) scale(.5)!important;
     right: -60px!important;
     bottom: -30px!important;

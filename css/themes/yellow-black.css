@@ -35,10 +35,14 @@ html {
   bottom: 20px;
   right: 30px;
   font-size: .8em;
-  opacity: .4;
+  opacity: .5;
   transition: opacity .3s ease-in, transform .2s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s;
 }
-.footer img {
+.footer .glyph {
+  margin: 0 5px;
+  transform: translateY(10px);
+}
+.footer .keith {
   position: absolute;
   right: -60px;
   bottom: -20px;
