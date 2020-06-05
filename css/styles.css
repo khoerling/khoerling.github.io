@@ -2,6 +2,7 @@
 
 html {
 	font-family: 'Roboto', sans-serif;
+	cursor: cell;
 }
 
 @media (min-width: 576px) {
