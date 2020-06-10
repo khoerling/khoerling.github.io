@@ -35,10 +35,9 @@ html {
   bottom: 20px;
   right: 30px;
   font-size: .8em;
-  opacity: .75;
+  opacity: .85;
   opacity: 0;
-  animation: slideIn .8s cubic-bezier(0.680, -0.550, 0.265, 1.55) 1.2s forwards;
-  /* transition: opacity .3s ease-in, transform .2s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s; */
+  animation: slideIn 1.2s cubic-bezier(0.680, -0.550, 0.265, 1.55) 1.0s forwards;
 }
 .footer .glyph {
   margin: 0 5px;
@@ -101,7 +100,7 @@ h2 > a {
   text-decoration: none;
 }
 
-a.center.qrcode {
+a.center.qrcode-link {
   width: auto!important;
   display: inline-block!important;
 }
@@ -130,7 +129,7 @@ small {
   }
   100% {
     transform: rotate(0) scale(1) translateX(-12px);
-    opacity: .75;
+    opacity: .85;
   }
 }
 
@@ -187,7 +186,7 @@ small {
     transform: scale(1.5) translateY(10px);
   }
   100% {
-    opacity: .75;
+    opacity: .85;
     transform: scale(1) translateY(0);
   }
 }
@@ -201,13 +200,13 @@ small {
 }
 @keyframes rotateIn {
   0% {
-    transform: rotate(-300deg) scale(5.8);
+    transform: rotate(-300deg) scale(10);
   }
   80% {
     transform: scale(.9);
   }
   95% {
-    transform: scale(1.1);
+    transform: scale(1.04);
   }
   100% {
     transform: rotate(0deg) scale(1);
