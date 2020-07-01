@@ -67,6 +67,7 @@
     <img class="keith" alt=" by Keith Hoerling" src="./images/keith.png" />
   </a>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
   <script type="text/javascript">
    setTimeout(function() {
      var scene = document.getElementById('scene');
@@ -80,7 +81,40 @@
 ██. ██ ▐█▌██ ██▌▐█▌▐█▄▄▌██▐█▌▐█▄▪▐█▐█▌▐█▌.▐▌██▐█▌
 ▀▀▀▀▀• ▀▀▀▀▀  █▪▀▀▀ ▀▀▀ ▀▀ █▪ ▀▀▀▀ ▀▀▀ ▀█▄▀▪▀▀ █▪
 Hey, you-- join us!  https://dimensionsoftware.com
-`)
+   `)
+   $(document).ready(function() {
+     setTimeout(function() {
+       const mousePos = {};
+
+       $(window).mousemove(function(e) {
+         mousePos.x = e.pageX;
+         mousePos.y = e.pageY;
+       });
+
+       $(window).mouseleave(function(e) {
+         mousePos.x = -1;
+         mousePos.y = -1;
+       });
+
+       var draw = setInterval(function() {
+         if(mousePos.x > 0 && mousePos.y > 0){
+           var range = 15;
+           var color = "background: #FFF;";
+           var sizeInt = getRandomInt(1, 50);
+           size = "height: " + sizeInt + "px; width: " + sizeInt + "px;";
+           var left = "left: " + getRandomInt(mousePos.x-range-sizeInt, mousePos.x+range) + "px;";
+           var top = "top: " + getRandomInt(mousePos.y-range-sizeInt, mousePos.y+range) + "px;";
+           var style = left+top+color+size;
+           $("<div class='ball' style='" + style + "'></div>").appendTo('#wrap').one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){$(this).remove();});
+         }
+       }, 50);
+     }, 1000);
+   });
+
+   function getRandomInt(min, max) {
+     return Math.round(Math.random() * (max - min + 1)) + min;
+   }
   </script>
+  <div id="wrap" ></div>
 </body>
 </html>
