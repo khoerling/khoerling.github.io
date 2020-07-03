@@ -8,17 +8,17 @@ html {
 .ball {
   pointer-events: none;
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 1px;
+  height: 1px;
   border-radius: 50%;
   z-index: -1;
-  background: gray;
   animation: implode 1s ease-in-out;
   animation-fill-mode: both;
-  opacity: .5;
+  opacity: .9;
 }
 
 @keyframes implode {
+  0% {transform: scale(1.5)}
   100% {transform: scale(0)}
 }
 

@@ -84,10 +84,12 @@
 Hey, you-- join us!  https://dimensionsoftware.com
    `)
    $(document).ready(function() {
+     var mult = 1.0;
      setTimeout(function() {
        const mousePos = {};
 
        $(window).mousemove(function(e) {
+         mult = 1.0;
          mousePos.x = e.pageX;
          mousePos.y = e.pageY;
        });
@@ -97,18 +99,20 @@ Hey, you-- join us!  https://dimensionsoftware.com
          mousePos.y = -1;
        });
 
+       setInterval(function() { mult -= 0.01; }, 15);
+
        var draw = setInterval(function() {
          if(mousePos.x > 0 && mousePos.y > 0){
            var range = 15;
-           var color = "background: #FFF;";
-           var sizeInt = getRandomInt(1, 50);
+           var color = 'background-color: rgb(225,240,82);';
+           var sizeInt = getRandomInt(1, 50) * mult;
            size = "height: " + sizeInt + "px; width: " + sizeInt + "px;";
            var left = "left: " + getRandomInt(mousePos.x-range-sizeInt, mousePos.x+range) + "px;";
            var top = "top: " + getRandomInt(mousePos.y-range-sizeInt, mousePos.y+range) + "px;";
            var style = left+top+color+size;
            $("<div class='ball' style='" + style + "'></div>").appendTo('#wrap').one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){$(this).remove();});
          }
-       }, 50);
+       }, 25);
      }, 1000);
    });
 
