@@ -19,6 +19,17 @@ html {
 	color: #1E1E1E;
 }
 
+  body:after {
+    content: '';
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: rgb(225,240,82);
+  }
+
 .lense {
   position: fixed!important;
   z-index: -1;
@@ -224,11 +235,12 @@ h2.tagline {
   animation: buildInSocial .75s cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 .icons-social > a {
-  transition: transform .3s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  transition: transform .3s cubic-bezier(0.680, -0.550, 0.265, 1.550), margin .4s ease-in;
   display: inline-block;
 }
 .icons-social > a:hover {
-  transform: scale(1.3);
+  transform: scale(1.35) translateY(-5px);
+  /* margin: 0 10px; */
   transition: none;
 }
 .qrcode {
@@ -238,7 +250,7 @@ h2.tagline {
   animation: rotateIn .6s ease-in;
 }
 .qrcode:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
   transition: transform .05s ease-in;
 }
 
