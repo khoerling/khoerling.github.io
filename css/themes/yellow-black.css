@@ -19,16 +19,16 @@ html {
 	color: #1E1E1E;
 }
 
-  body:after {
-    content: '';
-    position: fixed;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background-color: rgb(225,240,82);
-  }
+body:after {
+  content: '';
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: rgb(225,240,82);
+}
 
 .lense {
   position: fixed!important;
@@ -235,8 +235,28 @@ h2.tagline {
   animation: buildInSocial .75s cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 .icons-social > a {
+  position: relative;
   transition: transform .3s cubic-bezier(0.680, -0.550, 0.265, 1.550), margin .4s ease-in;
   display: inline-block;
+}
+.icons-social > a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scale(0);
+  transition: transform 1s ease-in;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.icons-social > a:hover:before {
+  transform: scale(1.1);
+  background-color: rgb(225,240,82);
+  opacity: 1;
+  transition: transform .3s ease-out, opacity .3s ease-out;
 }
 .icons-social > a:hover {
   transform: scale(1.35) translateY(-5px);
