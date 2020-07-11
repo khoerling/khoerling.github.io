@@ -87,7 +87,9 @@ Hey, you-- join us!  https://dimensionsoftware.com
        const mousePos = {};
 
        $(window).mousemove(function(e) {
-         mult = 1.0;
+         // mult is a factor of mouse movement on X axis
+         mult = mult <= 1.0 ? mult += 1.0001 : mult += (Math.abs(mousePos.x - e.pageX) / 10000)
+         if (mult >= 3) mult = 3
          mousePos.x = e.pageX;
          mousePos.y = e.pageY;
        });
@@ -97,9 +99,8 @@ Hey, you-- join us!  https://dimensionsoftware.com
          mousePos.y = -1;
        });
 
-       setInterval(function() { mult -= 0.01; }, 15);
-
        var draw = setInterval(function() {
+         mult -= 0.025
          if(mousePos.x > 0 && mousePos.y > 0){
            var range = 15;
            var color = 'background-color: rgb(225,240,82);';
