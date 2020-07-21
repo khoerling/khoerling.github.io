@@ -5,6 +5,8 @@ html {
 	cursor: cell;
 }
 
+body.shake:after { opacity: 0; transition: none; }
+
 .ball {
   pointer-events: none;
   position: absolute;
@@ -15,6 +17,17 @@ html {
   animation: implode 1s ease-in-out;
   animation-fill-mode: both;
   opacity: .9;
+}
+
+.shake {
+  animation: shake .15s ease-in-out;
+}
+
+@keyframes shake {
+  0% {transform: rotate(-5deg) }
+  50% {transform: rotate(2deg) }
+  75% {transform: rotate(-1deg) }
+  100% {transform: scale(0), rotate(0) }
 }
 
 @keyframes implode {

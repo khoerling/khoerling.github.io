@@ -81,13 +81,13 @@ Hey, you-- join us!  https://dimensionsoftware.com
    `)
    $(document).ready(function() {
      var mult = 1.0;
-     setTimeout(function() {
+     var bubbles = function() {
        const mousePos = {};
 
        $(window).mousemove(function(e) {
          // mult is a factor of mouse movement on X axis
-         mult = mult <= 1.0 ? mult += 1.0001 : mult += (Math.abs(mousePos.x - e.pageX) / 10000)
-         if (mult >= 3) mult = 3
+         mult = mult <= 1.0 ? mult += 1.00001 : mult += (Math.abs(mousePos.x - e.pageX) / 10000)
+         if (mult >= 2) mult = 2
          mousePos.x = e.pageX;
          mousePos.y = e.pageY;
        });
@@ -98,8 +98,9 @@ Hey, you-- join us!  https://dimensionsoftware.com
        });
 
        var draw = setInterval(function() {
-         mult -= 0.025
-         if(mousePos.x > 0 && mousePos.y > 0){
+         mult = mult - (mult > 3 ? .3 : 0.025);
+         if (mult < 0) mult = 0;
+         if (mousePos.x > 0 && mousePos.y > 0) {
            var range = 15;
            var color = 'background-color: rgb(225,240,82);';
            var sizeInt = getRandomInt(1, 50) * mult;
@@ -110,8 +111,38 @@ Hey, you-- join us!  https://dimensionsoftware.com
            $("<div class='ball' style='" + style + "'></div>").appendTo('#wrap').one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){$(this).remove();});
          }
        }, 15);
-     }, 1000);
+     };
+     if (window && window.requestIdleCallback)
+       window.requestIdleCallback(bubbles, {timeout: 20})
+     else
+       setTimeout(toggle, 20);
+
+     $(document).on('mousedown', function() {
+       mult = (mult * 2 > 18) ? 18 : mult * 2;
+       toggleClass('shake');
+     });
+
+     $(document).on('mouseup', function() {
+       toggleClass('shake', false);
+     });
    });
+
+   function toggleClass(className, add=true) {
+     const toggle = _ => {
+       const body = document.body
+       if (add) {
+         if (body.className.indexOf(className) === -1)
+           body.className += ` ${className}`
+       } else {
+         if (body.className.indexOf(className) > -1)
+           body.className = body.className.replace(` ${className}`, '')
+       }
+     }
+     if (window && window.requestIdleCallback)
+       window.requestIdleCallback(toggle, {timeout: 10})
+     else
+       setTimeout(toggle, 10);
+   }
 
    function getRandomInt(min, max) {
      return Math.round(Math.random() * (max - min + 1)) + min;

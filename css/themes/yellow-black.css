@@ -9,6 +9,8 @@
   color: #FFFC00;
 }
 
+a { outline: none; }
+
 html {
   background-color: #FFFC00;
   background: #FFFC00;
@@ -28,6 +30,7 @@ body:after {
   right: 0;
   height: 5px;
   background-color: rgb(225,240,82);
+  transition: opacity 1s ease-out;
 }
 
 .lense {
