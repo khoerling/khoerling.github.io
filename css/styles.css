@@ -6,6 +6,57 @@ html {
 }
 
 body.shake:after { opacity: 0; transition: none; }
+body.shake .keith { transform: scale(1.5) translate(-50px, -25px); transition: transform .15s; }
+body.shake .footer .glyph { opacity: 0; }
+body.shake .footer { color: transparent; }
+
+.phrase { opacity: 0; max-height: 0; overflow: hidden; }
+
+html.secret {
+  transform: rotate(-4deg);
+  background: rgba(0,0,0,.7);
+}
+html.secret .qrcode { display: none; }
+html.secret h1, html.secret h2, html.secret .icons-social { opacity: .5; }
+html.secret .phrase {
+  opacity: 1;
+  max-height: 999px;
+  animation: boom .5s ease-in;
+}
+html.secret .keith { transform: scale(1.7) translate(-75px, -30px); }
+html.secret body:after { transform: rotate(6deg); right: -50%; left: -50%;}
+html.secret .footer .glyph { opacity: 0; }
+html.secret .footer { color: transparent; }
+
+html.crash .plaid {
+  position: absolute;
+  left: -250%;
+  top: -250%;
+  width: 500%;
+  height: 500%;
+  background: linear-gradient(to left, #000, #000 3px, #050 3px, #050 17px, #000 17px, #000 20px, #ff9 20px, #ff9 34px);
+  background-size: 34px 500%;
+  overflow: none;
+  z-index: -5;
+  transform: rotate(30deg) translate3d(0,0,0);
+}
+html.crash main { display: none; }
+html.crash .keith { opacity: .8; transform: scale(18) rotate(120deg) translate(-0%, -0%); }
+html.crash body:after { display: none; }
+html.crash .plaid:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top,#000, #000 3px, #050 3px, #050 17px, #000 17px, #000 20px, #ff9 20px, #ff9 34px);
+  background-size: 100% 34px;
+  opacity: 0.5;
+}
+
+h4 { color: #eee; font-size: 1.5em; transform: rotate(3deg); }
+h3 { color: #fff; font-size: 2.2em; font-weight: bold; transform: rotate(5deg); height: 3em; }
 
 .ball {
   pointer-events: none;
@@ -23,11 +74,18 @@ body.shake:after { opacity: 0; transition: none; }
   animation: shake .15s ease-in-out;
 }
 
+@keyframes boom {
+  0% {transform: scale(1.5) }
+  50% {transform: scale(3) }
+  75% {transform: scale(0.9) }
+  100% {transform: scale(1) }
+}
+
 @keyframes shake {
   0% {transform: rotate(-5deg) }
   50% {transform: rotate(2deg) }
   75% {transform: rotate(-1deg) }
-  100% {transform: scale(0), rotate(0) }
+  100% {transform: scale(1), rotate(0) }
 }
 
 @keyframes implode {
