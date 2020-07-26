@@ -13,11 +13,21 @@ body.shake .footer { color: transparent; }
 .phrase { opacity: 0; max-height: 0; overflow: hidden; }
 
 html.secret {
-  transform: rotate(-4deg);
+  transform: rotate(-3deg);
+  background: transparent;
+}
+html.secret:before {
+  position: absolute;
   background: rgba(0,0,0,.7);
+  top: -50%;
+  bottom: -50%;
+  left: -50%;
+  right: -50%;
+  z-index: -1;
+  content: '';
 }
 html.secret .qrcode { display: none; }
-html.secret h1, html.secret h2, html.secret .icons-social { opacity: .5; }
+html.secret h1, html.secret h2, html.secret .icons-social { opacity: .6; }
 html.secret .phrase {
   opacity: 1;
   max-height: 999px;
