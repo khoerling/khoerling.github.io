@@ -216,6 +216,9 @@ small {
   0% {
     transform: rotate(-300deg) scale(10);
   }
+  10% {
+    transform: rotate(-300deg) scale(10);
+  }
   80% {
     transform: scale(.9);
   }
@@ -270,7 +273,8 @@ h2.tagline {
   margin-top: 60px;
   transition: transform .3s cubic-bezier(0.680, -0.550, 0.265, 1.550) .1s;
   will-change: transform;
-  animation: rotateIn .6s ease-in .1s;
+  transform: rotate(-300deg) scale(10);
+  animation: rotateIn .9s ease-in forwards;
 }
 .qrcode:hover {
   transform: scale(1.2);
