@@ -226,7 +226,7 @@ small {
   }
 }
 
-body {
+html, body {
   overflow: hidden;
 }
 h2.tagline {
