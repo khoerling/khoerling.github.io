@@ -189,7 +189,7 @@ export default function Home() {
           }
         }}
       >
-        <h1 className="intro center z-10">
+        <h1 className="intro center z-10 leading-17">
           <a
             href="/images/Keith Hoerling Resume.pdf"
             title="Keith Hoerling's Resume"
@@ -223,7 +223,7 @@ export default function Home() {
             texts={[
               "Remember to Have Fun!",
               "Co-Creating is My Specialty",
-              "...and Creative Software Solutions",
+              "Creative Software Solutions",
             ]}
             morphTime={2}
             cooldownTime={2}
@@ -231,12 +231,17 @@ export default function Home() {
           />
         </h2>
 
-        <div className="dock icons-social center">
-          <div className="flex left-1/2 max-w-full items-center justify-center w-full -translate-y-35">
-            <Dock className="items-end pb-3 bottom-1/2 left-1/2 max-w-full">
+        <div className="dock icons-social -mt-10 center">
+          <div className="flex left-1/2 max-w-full items-center justify-center w-full ">
+            <Dock className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-10 pb-3 w-full max-w-[900px] px-4">
               {data.map((item, idx) => (
-                <DockItem key={idx} className="aspect-square">
-                  <DockLabel>{item.title}</DockLabel>
+                <DockItem
+                  key={idx}
+                  className="aspect-square sm:w-[60px] sm:w-[70px] md:w-[80px]"
+                >
+                  <DockLabel className="font-[1000] text-2xl">
+                    {item.title}
+                  </DockLabel>
                   <DockIcon>{item.icon}</DockIcon>
                 </DockItem>
               ))}

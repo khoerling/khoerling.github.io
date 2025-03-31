@@ -21,10 +21,10 @@ import {
 } from "react";
 import { cn } from "@/lib/utils";
 
-const DOCK_HEIGHT = 175;
-const DEFAULT_MAGNIFICATION = 175;
+const DOCK_HEIGHT = 200;
+const DEFAULT_MAGNIFICATION = 200;
 const DEFAULT_DISTANCE = 150;
-const DEFAULT_PANEL_HEIGHT = 266;
+const DEFAULT_PANEL_HEIGHT = 300;
 
 type DockProps = {
   children: React.ReactNode;
@@ -100,7 +100,7 @@ function Dock({
         height: height,
         scrollbarWidth: "none",
       }}
-      className="height-100 left-0 top-0 mx-2 flex z-10 items-end overflow-x-auto"
+      className="height-100 left-0 top-0 mx-2 flex z-10 items-end"
     >
       <motion.div
         onMouseMove={({ pageX }) => {
@@ -201,7 +201,7 @@ function DockLabel({ children, className, ...rest }: DockLabelProps) {
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.1 }}
           className={cn(
-            "absolute font-black -top-10 left-1/2 w-fit text-xl whitespace-pre backdrop-blur-lg px-2 py-0.5 text-lg text-neutral-700",
+            "absolute font-black -top-25 left-1/2 w-fit whitespace-pre backdrop-blur-lg px-2 py-0.5 text-xl",
             className
           )}
           role="tooltip"

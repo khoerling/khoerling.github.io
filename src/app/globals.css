@@ -579,57 +579,45 @@ h3 { color: #fff; font-size: 2.2em; font-weight: bold; transform: rotate(5deg); 
   100% {transform: scale(0)}
 }
 
+/* simple responsive */
 @media (max-width: 576px) {
-	.icons-social {
-    margin-top: 1.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-	}
   .qrcode {
     display: none;
   }
 }
 
-@media (min-width: 576px) {
-	html {
-		font-size: 14px;
-	}
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .fab.nike svg {
     position: relative;
     top: 5px;
     width: 70px;
   }
-  .lense {
-    opacity: .6!important;
-    bottom: -50%!important;
-  }
   .footer .avatar {
     transform: scale(0.8) rotate(-45deg)!important;
-    right: -60px!important;
-    bottom: -30px!important;
+    right: 0px!important;
+    bottom: 0px!important;
   }
 }
 
 @media (min-width: 768px) {
-	html {
-		font-size: 16px;
-	}
+  html {
+    font-size: 16px;
+  }
 }
-
+  
 @media (min-width: 992px) {
-	html {
-		font-size: 18px;
-	}
+  html {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 1200px) {
-	html {
-		font-size: 20px;
-	}
+  html {
+    font-size: 20px;
+  }
 }
+
+
 
 /* Custom Styles */
 
