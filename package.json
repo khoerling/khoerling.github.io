@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && touch ./docs/.nojekyll && echo 'hoerling.com' > ./out/CNAME",
+    "build": "next build && touch ./docs/.nojekyll && echo 'hoerling.com' > ./docs/CNAME",
     "start": "next start",
     "lint": "next lint"
   },
