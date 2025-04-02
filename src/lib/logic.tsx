@@ -47,7 +47,15 @@ Hey, you-- join us!  https://dimensionsoftware.com
 
     // main events
     // ---------
+    let timer: NodeJS.Timeout | null = null;
+    const scaleAvatar = () => {
+      getElementById("avatar")?.setAttribute(
+        "style",
+        `transform: scale(${1 + (mult / 2) * 1.0025}) translate(-50px, -25px)`
+      );
+    };
     document.addEventListener("mousedown", () => {
+      if (timer) clearTimeout(timer);
       // set content
       setContent("h4", crashText);
       setContent("h3", secretPhrase);
@@ -77,11 +85,9 @@ Hey, you-- join us!  https://dimensionsoftware.com
       if (isSecret && !lastWasSecret) {
         lastWasSecret = true;
       } else if (lastWasSecret) {
-        getElementById("avatar")?.setAttribute(
-          "style",
-          `transform: scale(${1 + (mult / 2) * 1.0025}) translate(-50px, -25px)`
-        );
+        scaleAvatar();
       }
+      timer = setTimeout(scaleAvatar, 500); // reset
     });
 
     document.addEventListener("click", function (e) {
