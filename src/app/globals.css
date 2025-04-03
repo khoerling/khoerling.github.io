@@ -229,10 +229,12 @@ a.footer {
 }
 
 h1 > a {
+  cursor: pointer;
   color: #1e1e1e;
   text-decoration: none;
 }
 h2 > a {
+  cursor: pointer;
   color: #1e1e1e;
   text-decoration: none;
 }
@@ -359,6 +361,10 @@ h2.tagline {
   animation: buildInSocial 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+.icons-social a {
+  cursor: pointer;
+}
+
 .qrcode-link {
   position: fixed;
   left: 1rem;
@@ -469,7 +475,7 @@ body {
 
 html {
 	font-family: 'Roboto', sans-serif;
-	cursor: cell;
+	cursor: cell!important;
 }
 
 .phrase { opacity: 0; max-height: 0; }

@@ -48,13 +48,20 @@ Hey, you-- join us!  https://dimensionsoftware.com
     // main events
     // ---------
     let timer: NodeJS.Timeout | null = null;
-    const scaleAvatar = () => {
-      getElementById("avatar")?.setAttribute(
-        "style",
-        `transform: scale(${1 + (mult / 2) * 1.0025}) translate(-50px, -25px)`
-      );
-    };
+    const // helper fns
+      playSound = (src: string, volume: number) => {
+        const audio = new Audio(src);
+        audio.volume = volume / 100;
+        audio.play();
+      },
+      scaleAvatar = () => {
+        getElementById("avatar")?.setAttribute(
+          "style",
+          `transform: scale(${1 + (mult / 2) * 1.0025}) translate(-50px, -25px)`
+        );
+      };
     document.addEventListener("mousedown", () => {
+      playSound("/sfx/click.mp3", 100 / mult);
       if (timer) clearTimeout(timer);
       // set content
       setContent("h4", crashText);
@@ -62,11 +69,15 @@ Hey, you-- join us!  https://dimensionsoftware.com
       // secret?
       if (mult >= secretAt) {
         isSecret = true;
+        playSound("/sfx/secret.mp3", 50 / mult);
         document.documentElement.classList.add("secret");
         getElementById("splash-cursor")?.classList.add("opacity-100");
       }
       // crash?
-      if (mult >= crashAt) document.documentElement.classList.add("crash");
+      if (mult >= crashAt) {
+        document.documentElement.classList.add("crash");
+        playSound("/sfx/crash.mp3", 100);
+      }
       // shake!
       getElementById("app")?.classList.add("shake");
       getElementById("avatar")?.classList.add("rotate-15");
@@ -85,9 +96,9 @@ Hey, you-- join us!  https://dimensionsoftware.com
       if (isSecret && !lastWasSecret) {
         lastWasSecret = true;
       } else if (lastWasSecret) {
+        timer = setTimeout(scaleAvatar, 500); // reset
         scaleAvatar();
       }
-      timer = setTimeout(scaleAvatar, 500); // reset
     });
 
     document.addEventListener("click", function (e) {
