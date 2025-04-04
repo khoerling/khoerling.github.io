@@ -350,8 +350,9 @@ small {
 }
 
 html, body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
+
 h2.tagline {
   margin-top: -1rem;
   font-size: 1.6em;
@@ -411,6 +412,7 @@ body {
 
 /* Crash effect */
 .crash {
+  overflow: hidden;
   transform: rotate(-3deg);
   background: transparent;
   transition: all 0.3s ease-out;
@@ -476,6 +478,8 @@ body {
 html {
 	font-family: 'Roboto', sans-serif;
 	cursor: cell!important;
+  scrollbar-width: none;
+  background-color: #fffc00;
 }
 
 .phrase { opacity: 0; max-height: 0; }
@@ -483,6 +487,7 @@ html {
 .secret {
   transform: rotate(-3deg);
   background: transparent;
+  overflow: hidden;
 }
 .secret:before {
   position: absolute;
@@ -634,6 +639,7 @@ body {
 	/* justify-content: center; */
 	padding: 0 30px;
 	text-align: center;
+  overflow: hidden;
 }
 
 .reem-font {

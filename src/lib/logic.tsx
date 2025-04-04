@@ -61,7 +61,7 @@ Hey, you-- join us!  https://dimensionsoftware.com
         );
       };
     document.addEventListener("mousedown", () => {
-      playSound("/sfx/click.mp3", 100 / mult);
+      playSound("/sfx/click.mp3", 40 / mult);
       if (timer) clearTimeout(timer);
       // set content
       setContent("h4", crashText);
