@@ -29,7 +29,7 @@ export default function RootLayout({
         <title>KEITH HÖRLING | Creator / Engineer / Leader</title>
         <link rel="icon" href="favicon.ico" type="image/png" />
         <link
-          href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300"
+          href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300&display=optional"
           rel="stylesheet"
         />
         <link

@@ -184,9 +184,8 @@ export default function Home() {
       <main
         className="left-0 bottom-0 top-0 right-0 flex flex-col gap-5 row-start-2 items-center sm:items-start"
         onMouseDown={() => {
-          if (document.documentElement.classList.contains("secret")) {
+          if (document.documentElement.classList.contains("secret"))
             setSplatRadius(2);
-          }
         }}
       >
         <h1 className="intro center z-10 leading-17">
@@ -221,9 +220,11 @@ export default function Home() {
                 ?.classList.add("fadeIn");
             }}
             texts={[
-              "Remember to Have Fun!",
+              "Having Fun!",
               "Co-Creating is My Specialty",
               "Creative Software Solutions",
+              "Empowering YOU with AI",
+              "Making the Most of the Future",
             ]}
             morphTime={2}
             cooldownTime={2}
@@ -297,9 +298,8 @@ export default function Home() {
           on Silicon Beach, Los Angeles
           <img
             onMouseDown={() => {
-              if (document.documentElement.classList.contains("crash")) {
-                return setSplatRadius(4);
-              }
+              if (document.documentElement.classList.contains("secret"))
+                setSplatRadius(4);
             }}
             id="avatar"
             className="align-middle inline-block avatar"
@@ -308,6 +308,13 @@ export default function Home() {
           />
         </a>
       </footer>
+      <div id="space">
+        <div className="stars"></div>
+        <div className="stars"></div>
+        <div className="stars"></div>
+        <div className="stars"></div>
+        <div className="stars"></div>
+      </div>
       <SplashCursor SPLAT_RADIUS={splatRadius} />,
     </React.Fragment>
   );

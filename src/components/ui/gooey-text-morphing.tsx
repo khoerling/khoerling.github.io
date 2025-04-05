@@ -106,7 +106,7 @@ export function GooeyText({
     return () => {
       // Cleanup function if needed
     };
-  }, [texts, morphTime, cooldownTime]);
+  }, [_renders, onInitialRender, texts, morphTime, cooldownTime]);
 
   return (
     <div id={id} className={cn("relative", className)}>

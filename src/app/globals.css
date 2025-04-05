@@ -412,6 +412,7 @@ body {
 
 /* Crash effect */
 .crash {
+  animation: none;
   overflow: hidden;
   transform: rotate(-3deg);
   background: transparent;
@@ -485,6 +486,7 @@ html {
 .phrase { opacity: 0; max-height: 0; }
 
 .secret {
+  animation: none;
   transform: rotate(-3deg);
   background: transparent;
   overflow: hidden;
@@ -502,9 +504,10 @@ html {
 .secret .qrcode {
   display: none;
 }
+.secret h1 a { color: #ff9; }
 .secret h1,
 html.secret h2,
-html.secret .icons-social { opacity: 0.6; }
+html.secret .icons-social { opacity: 0.2; }
 html.secret .dock { display: none; }
 .secret .phrase {
   opacity: 1;
@@ -667,4 +670,65 @@ main {
 	margin-left: 0.675rem;;
 	width: 2.65rem;
 	height: 2.65rem;
+}
+
+
+#space, .stars {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.secret .stars {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #ff9, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, #ff9, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ff9, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 160px 120px, #ff9, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  animation: zoom 4s infinite;
+  opacity: 0;
+}
+
+.stars:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+.stars:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 1s;
+}
+.stars:nth-child(3) {
+  background-position: -20% -30%;
+  animation-delay: 2s;
+}
+.stars:nth-child(4) {
+  background-position: 40% -80%;
+  animation-delay: 3s;
+}
+.stars:nth-child(5) {
+  background-position: -20% 30%;
+  animation-delay: 4s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+    animation-timing-function: ease-in;
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.8);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+    animation-timing-function: ease-out;
+  }
 }

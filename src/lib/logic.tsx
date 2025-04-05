@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 
 const // interactive triggers
-  secretAt = 4,
+  secretAt = 6,
   crashAt = 9;
 
 const // text strings
@@ -72,6 +72,7 @@ Hey, you-- join us!  https://dimensionsoftware.com
         playSound("/sfx/secret.mp3", 50 / mult);
         document.documentElement.classList.add("secret");
         getElementById("splash-cursor")?.classList.add("opacity-100");
+        getElementById("tagline-morphs")?.remove();
       }
       // crash?
       if (mult >= crashAt) {
