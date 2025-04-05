@@ -200,7 +200,7 @@ export default function Home() {
 
         <h2
           id="tagline"
-          className="reem-font transition-opacity duration-700 tagline center"
+          className="reem-font transition-opacity duration-700 tagline center mb-20 md:mb-0"
         >
           <a
             id="tagline-text"

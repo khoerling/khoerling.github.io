@@ -608,8 +608,8 @@ h3 { color: #fff; font-size: 2.2em; font-weight: bold; transform: rotate(5deg); 
   }
   .footer .avatar {
     transform: scale(0.8) rotate(-45deg)!important;
-    right: 0px!important;
-    bottom: 0px!important;
+    right: -60px!important;
+    bottom: -30px!important;
   }
 }
 
