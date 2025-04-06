@@ -220,11 +220,11 @@ export default function Home() {
                 ?.classList.add("fadeIn");
             }}
             texts={[
-              "Having Fun!",
+              "Creative Fun!",
               "Co-Creating is My Specialty",
-              "Creative Software Solutions",
+              "Futuristic Software Solutions",
               "Empowering YOU with AI",
-              "Making the Most of the Future",
+              "Leadership in Software",
             ]}
             morphTime={2}
             cooldownTime={2}
