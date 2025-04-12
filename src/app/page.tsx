@@ -185,7 +185,7 @@ export default function Home() {
         className="left-0 bottom-0 top-0 right-0 flex flex-col gap-5 row-start-2 items-center sm:items-start"
         onMouseDown={() => {
           if (document.documentElement.classList.contains("secret"))
-            setSplatRadius(2);
+            if (splatRadius <= 2) setSplatRadius(2);
         }}
       >
         <h1 className="intro center z-10 leading-17">
@@ -299,7 +299,7 @@ export default function Home() {
           <img
             onMouseDown={() => {
               if (document.documentElement.classList.contains("secret"))
-                setSplatRadius(4);
+                if (splatRadius < 5) setSplatRadius(5);
             }}
             id="avatar"
             className="align-middle inline-block avatar"

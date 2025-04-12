@@ -675,7 +675,7 @@ main {
 
 #space, .stars {
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -683,6 +683,7 @@ main {
 }
 
 .secret .stars {
+  will-change: opacity, transform;
   background-image:
     radial-gradient(2px 2px at 20px 30px, #ff9, rgba(0,0,0,0)),
     radial-gradient(1px 1px at 40px 70px, #ff9, rgba(0,0,0,0)),
@@ -719,7 +720,7 @@ main {
   0% {
     opacity: 0;
     transform: scale(0.1);
-    animation-timing-function: ease-in;
+    animation-timing-function: linear;
   }
   85% {
     opacity: 1;
@@ -729,6 +730,6 @@ main {
   100% {
     opacity: 0;
     transform: scale(2.5);
-    animation-timing-function: ease-out;
+    animation-timing-function: linear;
   }
 }
