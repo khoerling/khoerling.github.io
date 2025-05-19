@@ -51,7 +51,7 @@ Hey, you-- join us!  https://dimensionsoftware.com
     const // helper fns
       playSound = (src: string, volume: number) => {
         const audio = new Audio(src);
-        audio.volume = volume / 100;
+        audio.volume = volume / 125;
         audio.play();
       },
       scaleAvatar = () => {
@@ -69,6 +69,8 @@ Hey, you-- join us!  https://dimensionsoftware.com
       // secret?
       if (mult >= secretAt) {
         isSecret = true;
+        // render starfield
+        require("../components/ui/starfield.js");
         playSound("/sfx/secret.mp3", 50 / mult);
         document.documentElement.classList.add("secret");
         getElementById("splash-cursor")?.classList.add("opacity-100");

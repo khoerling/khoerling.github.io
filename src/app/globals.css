@@ -419,6 +419,11 @@ body {
   transition: all 0.3s ease-out;
 }
 
+.shake .radial_stripes {
+  animation:rotate 20s infinite linear!important;
+  opacity: 0.1;
+}
+
 .crash .qrcode-link {
  cursor: url('data:image/x-icon;base64,AAACAAEAICAQAAAAAADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAABZWFYAAAAAAPBisAD///8AJCTwAGtqaAAk7PAAYt/wAPAkjQAk8DIA8IokAOif7QAKCgoAJJvwAAAAAAAAAAAAERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERURERVREVURERERERFVERFVERFVURxVERERERERVVERERERERERERERERERERURd3d3cVVVVVVVERERGIiBF3u7uxVVzMzMxVEREYiIgXe7u7FbtcVcVcW7ERGqqqF7u7shW7VVVVVVuxERqqmRe7K7vFVVzFXFzFUREamZkXu7u7FVVTxVVTxVERGWZmF7u7srFVVVVVVVURERZhEReyu7uxVVVVVVVVEREWFVUXu7u7sVVVERFVBRERERURF7uyu7FVUbu3xQURERVR3Re7u7uxVRsrtxFVEREVEd0Xe7u7KxG7u7cREREREd3UEXeyu7u7u7u3ERERER3dREQXe7u7u7u3dxEREREUREEREXd3d3d3d3ERERERFEQRERERERERERERERERERQRERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERH//////////////////////////////////////8cMf+OHCH/hhgh/4AAAP+AAAB+AAAAPAAAABwAAAAcAAAAHAAAABwAAAA8AAAAPAAAADwAAAA8AAAAPAAAAnwAAAP8AAAD/DwAB/x+AA/9//////////////////////////w=='), auto;
 }
@@ -449,6 +454,16 @@ body {
   z-index: -5;
   transform: rotate(30deg) translate3d(0,0,0);
   transition: transform 0.3s ease-out;
+}
+
+.crash .starfield {
+  opacity: 1;
+}
+
+.crash .radial_stripes {
+  opacity: 1;
+  z-index: 10;
+  animation:rotate 10s infinite linear;
 }
 
 .crash .avatar { 
@@ -491,6 +506,12 @@ html {
   background: transparent;
   overflow: hidden;
 }
+
+.secret .radial_stripes {
+  opacity: 0.75;
+  animation:rotate 40s infinite linear;
+}
+
 .secret:before {
   position: absolute;
   background: rgba(0,0,0,.9);
@@ -673,49 +694,6 @@ main {
 }
 
 
-#space, .stars {
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.secret .stars {
-  will-change: opacity, transform;
-  background-image:
-    radial-gradient(2px 2px at 20px 30px, #ff9, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 40px 70px, #ff9, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 50px 160px, #ff9, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 160px 120px, #ff9, rgba(0,0,0,0));
-  background-repeat: repeat;
-  background-size: 250px 250px;
-  animation: zoom 4s infinite;
-  opacity: 0;
-}
-
-.stars:nth-child(1) {
-  background-position: 50% 50%;
-  animation-delay: 0s;
-}
-.stars:nth-child(2) {
-  background-position: 20% 60%;
-  animation-delay: 1s;
-}
-.stars:nth-child(3) {
-  background-position: -20% -30%;
-  animation-delay: 2s;
-}
-.stars:nth-child(4) {
-  background-position: 40% -80%;
-  animation-delay: 3s;
-}
-.stars:nth-child(5) {
-  background-position: -20% 30%;
-  animation-delay: 4s;
-}
-
 @keyframes zoom {
   0% {
     opacity: 0;
@@ -732,4 +710,30 @@ main {
     transform: scale(2.5);
     animation-timing-function: linear;
   }
+}
+
+.radial_stripes {
+  position:absolute;
+  top:-50%;
+  left:0;
+  width:100vw;
+  height:100vw;
+  opacity:0.025;
+  animation:rotate 60s infinite linear;
+}
+
+.radial_stripes {background:url('/images/radial-stripes.svg');}
+
+@keyframes rotate {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.starfield {
+  position: absolute;
+  opacity: 0.5;
+  top:-50%;
+  left:0;
+  width:100vw;
+  height:100vw;
 }

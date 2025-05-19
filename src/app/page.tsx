@@ -181,6 +181,7 @@ export default function Home() {
 
   return (
     <React.Fragment>
+      <div className="radial_stripes"></div>
       <main
         className="left-0 bottom-0 top-0 right-0 flex flex-col gap-5 row-start-2 items-center sm:items-start"
         onMouseDown={() => {
@@ -309,11 +310,7 @@ export default function Home() {
         </a>
       </footer>
       <div id="space">
-        <div className="stars"></div>
-        <div className="stars"></div>
-        <div className="stars"></div>
-        <div className="stars"></div>
-        <div className="stars"></div>
+        <canvas id="starfield" className="starfield"></canvas>
       </div>
       <SplashCursor SPLAT_RADIUS={splatRadius} />,
     </React.Fragment>
