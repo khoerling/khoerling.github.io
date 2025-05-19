@@ -16,7 +16,6 @@ class Star {
     //initializing
     this.x = Math.random() * canvas.width - canvas.width / 2; //random x
     this.y = Math.random() * canvas.height - canvas.height / 2; //random y
-    this.px, this.py;
     this.z = Math.random() * 4; //random z
   }
 
