@@ -508,18 +508,18 @@ html {
 }
 
 .secret .radial_stripes {
-  opacity: 0.75;
+  opacity: 1;
   animation:rotate 40s infinite linear;
 }
 
 .secret:before {
   position: absolute;
-  background: rgba(0,0,0,.9);
+  background: rgba(0,0,0,.8);
   top: -50%;
   bottom: -50%;
   left: -50%;
   right: -50%;
-  z-index: 0;
+  z-index: -1;
   content: '';
 }
 .secret .qrcode {
