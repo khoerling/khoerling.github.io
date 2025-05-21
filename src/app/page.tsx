@@ -191,7 +191,7 @@ export default function Home() {
       >
         <h1 className="intro center z-10 leading-17">
           <a
-            href="/images/Keith Hoerling Resume.pdf"
+            href="/Keith Hoerling Resume.pdf"
             title="Keith Hoerling's Resume"
             target="_blank"
           >
