@@ -421,7 +421,8 @@ body {
 
 .shake .radial_stripes {
   animation:rotate 20s infinite linear!important;
-  opacity: 0.1;
+  opacity: 0.2;
+  transition: opacity 0.1s ease-out;
 }
 
 .crash .qrcode-link {
@@ -514,7 +515,7 @@ html {
 
 .secret:before {
   position: absolute;
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.6);
   top: -50%;
   bottom: -50%;
   left: -50%;
@@ -525,10 +526,18 @@ html {
 .secret .qrcode {
   display: none;
 }
-.secret h1 a { color: #ff9; }
-.secret h1,
-html.secret h2,
-html.secret .icons-social { opacity: 0.2; }
+.secret h1 a {
+  color: #000;
+  text-shadow:
+    0 0 2px #fff,
+    2px 0 8px #ff9,
+    -2px 0 8px #ff9,
+    0 2px 8px #ff9,
+    0 -2px 8px #ff9;
+  transform: translateZ(0);
+  will-change: transform;
+  opacity: .25;
+}
 html.secret .dock { display: none; }
 .secret .phrase {
   opacity: 1;
@@ -720,9 +729,10 @@ main {
   height:100vw;
   opacity:0.025;
   animation:rotate 60s infinite linear;
+  transition: none;
+  background:url('/images/radial-stripes.svg');
 }
 
-.radial_stripes {background:url('/images/radial-stripes.svg');}
 
 @keyframes rotate {
     from {transform:rotate(0deg);}

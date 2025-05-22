@@ -52,7 +52,7 @@ class Star {
 let speed = 0.04;
 let stars = [];
 //create stars (objects)
-for (let i = 0; i < 500; i++) stars.push(new Star());
+for (let i = 0; i < 800; i++) stars.push(new Star());
 c.fillStyle = "rgba(0, 0, 0, 0.1)";
 c.strokeStyle = color;
 c.translate(canvas.width / 2, canvas.height / 2);
