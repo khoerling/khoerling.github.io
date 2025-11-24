@@ -136,6 +136,8 @@ a {
 }
 
 html {
+  box-sizing: border-box;
+  padding: 0;
   background-color: #fffc00;
   background: #fffc00;
   background: linear-gradient(-45deg, #fff, #fff, #fffc00, #fffc00);
@@ -144,6 +146,19 @@ html {
   animation-delay: 7s;
   color: #1e1e1e;
   transition: transform 0.3s ease-out;
+}
+
+@media (orientation: portrait) and (max-width: 768px) {
+  html {
+    background: #fffc00;
+    animation: none;
+    animation-delay: 0s;
+    background-position: 0% 50%;
+  }
+
+  h1.intro {
+    padding-top: 2rem;
+  }
 }
 
 body:after {
@@ -350,6 +365,7 @@ small {
 }
 
 html, body {
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 
@@ -637,9 +653,16 @@ h3 { color: #fff; font-size: 2.2em; font-weight: bold; transform: rotate(5deg); 
     width: 70px;
   }
   .footer .avatar {
-    transform: scale(0.8) rotate(-45deg)!important;
-    right: -60px!important;
-    bottom: -30px!important;
+    transform: scale(0.4) rotate(-45deg)!important;
+    right: -40%!important;
+    bottom: -55px!important;
+  }
+
+  /* Ensure body strictly clips overflow on mobile */
+  body {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
   }
 }
 
