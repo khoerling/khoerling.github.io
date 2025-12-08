@@ -1,0 +1,4 @@
+:HL["/_next/static/chunks/999ccf355dbcd9df.css","style"]
+:HL["https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300&display=optional","style"]
+:HL["https://use.fontawesome.com/releases/v6.4.0/css/all.css","style"]
+0:{"buildId":"Ty8m9g9-3f-kQXSJ9Yuxw","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
