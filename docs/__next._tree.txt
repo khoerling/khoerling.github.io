@@ -1,6 +1,6 @@
-:HL["/_next/static/chunks/999ccf355dbcd9df.css","style"]
+:HL["/_next/static/chunks/5e7f11920fee80be.css","style"]
 :HL["/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300&display=optional","style"]
 :HL["https://use.fontawesome.com/releases/v6.4.0/css/all.css","style"]
-0:{"buildId":"Ty8m9g9-3f-kQXSJ9Yuxw","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"2qer8fspv1nluj99Y0jNd","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

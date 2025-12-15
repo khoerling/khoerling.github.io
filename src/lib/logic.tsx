@@ -51,7 +51,7 @@ Hey, you-- join us!  https://dimensionsoftware.com
     const // helper fns
       playSound = (src: string, volume: number) => {
         const audio = new Audio(src);
-        audio.volume = volume / 125;
+        audio.volume = volume / 150;
         audio.play();
       },
       scaleAvatar = () => {

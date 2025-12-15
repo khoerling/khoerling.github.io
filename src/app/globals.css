@@ -156,6 +156,10 @@ html {
     background-position: 0% 50%;
   }
 
+  body:after {
+    display: none;
+  }
+
   h1.intro {
     padding-top: 2rem;
   }
