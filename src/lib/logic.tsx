@@ -1,6 +1,13 @@
 "use client";
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    speed: number;
+    _speedTimer?: ReturnType<typeof setTimeout>;
+  }
+}
+
 const // interactive triggers
   secretAt = 6,
   crashAt = 9;
@@ -26,7 +33,8 @@ Hey, you-- join us!  https://dimensionsoftware.com
     let // game state variables
       mult = 1,
       isSecret = false,
-      lastWasSecret = false;
+      lastWasSecret = false,
+      lastSpeed = 0.04;
 
     const // helper fns
       $ = (sel: string) => document.querySelector(sel),
@@ -75,6 +83,8 @@ Hey, you-- join us!  https://dimensionsoftware.com
         document.documentElement.classList.add("secret");
         getElementById("splash-cursor")?.classList.add("opacity-100");
         getElementById("tagline-morphs")?.remove();
+        lastSpeed = window.speed;
+        window.speed = window.speed > 1000 ? 1000 : window.speed * 2.5;
       }
       // crash?
       if (mult >= crashAt) {
@@ -102,6 +112,11 @@ Hey, you-- join us!  https://dimensionsoftware.com
         timer = setTimeout(scaleAvatar, 500); // reset
         scaleAvatar();
       }
+      // restore speed
+      if (window._speedTimer) clearTimeout(window._speedTimer);
+      window._speedTimer = setTimeout(() => {
+        window.speed = lastSpeed;
+      }, 1000);
     });
 
     document.addEventListener("click", function (e) {

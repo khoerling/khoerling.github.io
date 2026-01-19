@@ -181,6 +181,7 @@ export default function Home() {
 
   return (
     <React.Fragment>
+      <div className="noise"></div>
       <div className="radial_stripes"></div>
       <main
         className="left-0 bottom-0 top-0 right-0 flex flex-col gap-5 row-start-2 items-center sm:items-start"
@@ -192,8 +193,9 @@ export default function Home() {
         <h1 className="intro center z-10 leading-17">
           <a
             href="/Keith Hoerling Resume.pdf"
-            title="Keith Hoerling's Resume"
+            title="Download Keith Hoerling's Engineering Leadership Resume"
             target="_blank"
+            className="hover:text-black/70 transition-colors"
           >
             Keith Hörling
           </a>

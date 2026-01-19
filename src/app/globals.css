@@ -139,11 +139,7 @@ html {
   box-sizing: border-box;
   padding: 0;
   background-color: #fffc00;
-  background: #fffc00;
-  background: linear-gradient(-45deg, #fff, #fff, #fffc00, #fffc00);
-  background-size: 400% 400%;
-  animation: gradientBg 8s ease-in infinite;
-  animation-delay: 7s;
+  background: radial-gradient(circle at center, #ffffff 0%, #fffc00 100%);
   color: #1e1e1e;
   transition: transform 0.3s ease-out;
 }
@@ -151,9 +147,6 @@ html {
 @media (orientation: portrait) and (max-width: 768px) {
   html {
     background: #fffc00;
-    animation: none;
-    animation-delay: 0s;
-    background-position: 0% 50%;
   }
 
   body:after {
@@ -232,6 +225,19 @@ a.footer {
   z-index: -2;
 }
 
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.15;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
 @keyframes gradientBg {
   0% {
     background-position: 0% 50%;
@@ -261,6 +267,9 @@ h2 > a {
 small {
   font-size: 0.65em;
   opacity: 0.15;
+  font-weight: 100;
+  margin: 0 0.25em;
+  vertical-align: middle;
 }
 
 
@@ -434,7 +443,6 @@ body {
 .crash {
   animation: none;
   overflow: hidden;
-  transform: rotate(-3deg);
   background: transparent;
   transition: all 0.3s ease-out;
 }
@@ -489,7 +497,7 @@ body {
 
 .crash .avatar { 
   opacity: .8; 
-  transform: scale(18) rotate(120deg) translate(-0%, -0%);
+  transform: scale(25) rotate(120deg) translate(-0%, -0%)!important;
   transition: all 0.3s ease-out;
 }
 
@@ -523,7 +531,7 @@ html {
 
 .secret {
   animation: none;
-  transform: rotate(-3deg);
+  /* transform: rotate(-3deg); */
   background: transparent;
   overflow: hidden;
 }
@@ -547,13 +555,8 @@ html {
   display: none;
 }
 .secret h1 a {
-  color: #000;
-  text-shadow:
-    0 0 2px #fff,
-    2px 0 8px #ff9,
-    -2px 0 8px #ff9,
-    0 2px 8px #ff9,
-    0 -2px 8px #ff9;
+  color: #ccc;
+  text-shadow: 3px 2px 3px #000;
   transform: translateZ(0);
   will-change: transform;
   opacity: .25;
@@ -570,7 +573,7 @@ html.secret .dock { display: none; }
   animation: boom .4s ease-in;
 }
 .secret .avatar { transform: scale(1.7) translate(-75px, -30px); }
-.secret body:after { transform: rotate(6deg); right: -50%; left: -50%;}
+.secret body:after { display: none; }
 .secret .footer .glyph { opacity: 0; }
 .secret .footer { color: transparent; }
 
@@ -589,7 +592,6 @@ html.secret .dock { display: none; }
   transform: rotate(30deg) translate3d(0,0,0);
 }
 .crash main { display: none; }
-.crash .avatar { opacity: .8; transform: scale(18) rotate(120deg) translate(-0%, -0%)!important; }
 .crash body:after { display: none; }
 .crash .plaid:before {
   content: "";
@@ -702,19 +704,24 @@ body {
   overflow: hidden;
 }
 
+@keyframes fadeInFont {
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 .reem-font {
-	font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Reem Kufi', sans-serif;
 }
 
 .intro {
   padding-top: 5rem;
-	font-family: 'Reem Kufi', sans-serif;
-	font-size: 3.75em;
-	font-weight: 600;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 3.75em;
+  font-weight: 600;
 }
 
 main {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 
